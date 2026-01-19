@@ -1,65 +1,192 @@
+/* BODY */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f4f4f4;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(160deg, #1e88e5, #4dd0e1);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
+/* HEADER */
 header {
-    background-color: #1e88e5;
-    color: white;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
     text-align: center;
-    padding: 20px;
+    padding: 16px 10px;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
 }
 
+header h1 {
+    font-size: 1.4rem;
+}
+
+header p {
+    font-size: 0.8rem;
+    opacity: 0.85;
+}
+
+/* NAVIGATION */
 nav {
-    background-color: #333;
-    padding: 10px;
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 8px;
+    background: transparent;
 }
 
-nav a {
-    color: white;
-    margin: 15px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #1e88e5;
-}
-
-.tips {
-    background-color: white;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-.tips h2 {
-    color: #1e88e5;
-}
-
-.btn-container {
-    text-align: center;
-    margin: 20px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #1e88e5;
-    color: white;
+/* NAV BUTTONS */
+nav button {
+    padding: 8px 14px;
+    font-size: 0.75rem;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #ff6a00, #ff9800);
+    color: #fff;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-button:hover {
-    background-color: #1565c0;
+nav button:active {
+    transform: scale(0.95);
 }
 
-footer {
-    background-color: #333;
-    color: white;
+/* CONTENT CARD */
+.content {
+    display: none;
+    background: #ffffff;
+    margin: 10px auto;
+    padding: 14px;
+    width: 94%;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* ACTIVE SECTION */
+.active {
+    display: block;
+}
+
+/* SECTION TITLE */
+.content h2 {
+    font-size: 1.1rem;
+    color: #1e3c72;
+    margin-bottom: 8px;
     text-align: center;
+}
+
+/* IMAGE */
+.content img {
+    width: 100%;
+    border-radius: 14px;
+    margin: 8px 0 12px 0;
+}
+
+/* LIST */
+.content ul {
+    padding-left: 18px;
+}
+
+.content li {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    line-height: 1.35;
+}
+
+/* REMINDER INPUT */
+input[type="date"] {
+    width: 100%;
     padding: 10px;
+    border-radius: 14px;
+    border: 1px solid #ccc;
+    font-size: 0.9rem;
+}
+
+/* REMINDER MESSAGE */
+#reminderMsg {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #2c5364;
+    text-align: center;
+}
+
+/* FOOTER */
+footer {
+    margin-top: auto;
+    background: rgba(0,0,0,0.35);
+    color: #fff;
+    text-align: center;
+    padding: 8px;
+    font-size: 0.7rem;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+/* ========================= */
+/* MOBILE FORCE OVERRIDES */
+/* ========================= */
+@media screen and (max-width: 600px) {
+
+    /* Increase overall text size */
+    body {
+        font-size: 18px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    /* Bigger navigation buttons */
+    nav {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    nav button {
+        font-size: 1rem;
+        padding: 12px 18px;
+        border-radius: 25px;
+    }
+
+    /* Content card full width */
+    .content {
+        width: 96%;
+        padding: 18px;
+    }
+
+    /* Section heading */
+    .content h2 {
+        font-size: 1.4rem;
+    }
+
+    /* IMAGE FIX (VERY IMPORTANT) */
+    .content img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 260px;
+        object-fit: cover;
+    }
+
+    /* List text bigger */
+    .content li {
+        font-size: 1.05rem;
+        line-height: 1.6;
+    }
+
+    /* Reminder input & text */
+    input[type="date"] {
+        font-size: 1.1rem;
+        padding: 14px;
+    }
+
+    #reminderMsg {
+        font-size: 1rem;
+    }
+
+    /* Footer readable */
+    footer {
+        font-size: 0.85rem;
+        padding: 12px;
+    }
 }
